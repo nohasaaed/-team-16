@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package software;
+
+import java.util.Arrays;
 
 /**
  *
@@ -14,9 +15,25 @@ public class Software {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+     
+	public static int GetMedian(int arr[]) {
+		int median = -1;
+		Arrays.sort(arr);
+		
+		if (arr.length % 2 == 0)
+		    median = (arr[arr.length/2] + arr[arr.length/2 - 1])/2;
+		else
+		    median = (arr[arr.length/2]);
+		
+		return median;
+	}
+	
+	
+	
+	public static void main(String[] args) {
         // TODO code application logic here
-      
+		
     }
+	
     
 }
