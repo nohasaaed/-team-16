@@ -14,6 +14,23 @@ public class Software {
     /**
      * @param args the command line arguments
      */
+    
+    
+	public static double getAvg(double[] arr)
+	{
+		
+	double tut = 0;
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			tut+=arr[i];
+		}
+		
+		double avg = tut/arr.length;
+		
+		return avg;
+		
+	}
     public static void main(String[] args) {
         // TODO code application logic here
       
