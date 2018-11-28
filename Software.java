@@ -14,9 +14,33 @@ public class Software {
     /**
      * @param args the command line arguments
      */
+    static void get_max_numbers(int arr[], int len) {
+        if(len<3){
+        System.out.println("Not valid input");    
+        }
+        int first = 0, second = 0, third = 0;
+        for (int i = 0; i < len; i++) {
+            if (arr[i] > first) {
+                third = second;
+                second = first;
+                first = arr[i]; 
+                
+            } else if (arr[i] > second) {
+                third = second;
+                second = arr[i];
+
+            } else if (arr[i] > third) {
+                third = arr[i];
+            }
+
+        }
+                    System.out.println("Three largest numbers are "
+                    + first + " " + second + " " + third);
+    }
+
     public static void main(String[] args) {
         // TODO code application logic here
-      
+
     }
-    
+
 }
