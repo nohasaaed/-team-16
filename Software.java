@@ -18,21 +18,7 @@ public class Software {
      */
     
     
-	public static double getAvg(double[] arr)
-	{
-		
-	double tut = 0;
-		
-		for(int i=0;i<arr.length;i++)
-		{
-			tut+=arr[i];
-		}
-		
-		double avg = tut/arr.length;
-		
-		return avg;
-		
-	}
+	
 
 	public static double GetMedian(int arr[]) {
 		Arrays.sort(arr);
