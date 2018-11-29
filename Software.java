@@ -15,10 +15,11 @@ public class Software {
      * @param args the command line arguments
      */
     static void get_max_numbers(int arr[], int len) {
+        int first = 0, second = 0, third = 0;
         if(len<3){
         System.out.println("Not valid input");    
-        }
-        int first = 0, second = 0, third = 0;
+        }else{
+        
         for (int i = 0; i < len; i++) {
             if (arr[i] > first) {
                 third = second;
@@ -36,11 +37,13 @@ public class Software {
         }
                     System.out.println("Three largest numbers are "
                     + first + " " + second + " " + third);
+        }
     }
 
     public static void main(String[] args) {
         // TODO code application logic here
 
     }
+    
 
 }
