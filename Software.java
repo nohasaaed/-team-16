@@ -14,7 +14,6 @@ public class Software {
     /**
      * @param args the command line arguments
      */
-
       static void MostRepeatedElement(String inputArray[])
       { HashMap<String, Integer> data = new HashMap<String, Integer>();
         for (String i : inputArray)
