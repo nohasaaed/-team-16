@@ -305,8 +305,8 @@ public class Software {
 
 public static Vector<Integer> returnPrimeNumbers(int[] intArray){
 	Vector<Integer> primeNumbers = new Vector<Integer>();
-	boolean primeBool = true;
 	for(int i=0;i<intArray.length;i++){
+		boolean primeBool = true;
 		for(int j=2;j<=intArray[i]/2;j++){
 			if(intArray[i] % j == 0){
 				primeBool = false;
@@ -321,7 +321,6 @@ public static Vector<Integer> returnPrimeNumbers(int[] intArray){
 			primeBool = false;
 		}
 		if(primeBool){
-			System.out.println("khod boolean: " + intArray[i]);
 			primeNumbers.add(intArray[i]);
 		}
 	}
