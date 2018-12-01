@@ -6,6 +6,27 @@ import java.util.Map.Entry;
 
 public class Software {
 
+    static void get_max_numbers(int arr[], int len) {
+        int first = 0, second = 0, third = 0;
+        if (len < 3) {
+            System.out.println("Not valid input");
+        } else {
+
+            for (int i = 0; i < len; i++) {
+                if (arr[i] > first) {
+                    third = second;
+                    second = first;
+                    first = arr[i];
+
+                } else if (arr[i] > second) {
+                    third = second;
+                    second = arr[i];
+
+                } else if (arr[i] > third) {
+                    third = arr[i];
+                }
+
+
 
     	public static void isPalindrom() {
 		Scanner s = new Scanner(System.in);
@@ -59,32 +80,50 @@ public class Software {
             if (data.containsKey(i))
             {   data.put(i, data.get(i)+1);
             }
-            else
-            {   data.put(i, 1);
+            System.out.println("Three largest numbers are "
+                    + first + " " + second + " " + third);
+        }
+    }
+
+    public static double getAvg(double[] arr) {
+
+        double tut = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            tut += arr[i];
+        }
+
+        double avg = tut / arr.length;
+
+        return avg;
+
+    }
+
+    static void MostRepeatedElement(String inputArray[]) {
+        HashMap<String, Integer> data = new HashMap<>();
+        for (String i : inputArray) {
+            if (data.containsKey(i)) {
+                data.put(i, data.get(i) + 1);
+            } else {
+                data.put(i, 1);
             }
         }
         String element = "";
         int freq = 1;
         Set<Entry<String, Integer>> m = data.entrySet();
-        for (Entry<String, Integer> entry : m)
-        {
-            if(entry.getValue() > freq)
-            {  element = entry.getKey();
+        for (Entry<String, Integer> entry : m) {
+            if (entry.getValue() > freq) {
+                element = entry.getKey();
                 freq = entry.getValue();
             }
         }
-        if(freq > 1)
-        {
-            System.out.println("The most frequent element : "+element);
-            System.out.println("Its frequency : "+freq);
-        }
-        else
-        {
+        if (freq > 1) {
+            System.out.println("The most frequent element : " + element);
+            System.out.println("Its frequency : " + freq);
+        } else {
             System.out.println("No frequent element. All elements are unique.");
         }
     }
-
- 
 
     public static double GetMedian(int arr[]) {
         Arrays.sort(arr);
@@ -98,7 +137,6 @@ public class Software {
 
         return median;
     }
-
 
     public static ArrayList<Integer> get_minimum(int[] array) {
         ArrayList<Integer> array2 = new ArrayList<>();
@@ -120,7 +158,6 @@ public class Software {
         return minimum_arr;
     }
 
-    
     public static void ShiftArray(String array) {
         List<Integer> num = new ArrayList<>();
         List<String> Char = new ArrayList<>();
