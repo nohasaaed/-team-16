@@ -6,6 +6,34 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Software {
 
+    static void shuffluarray(int[] ar)
+    {
+
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+    }
+    static void shuffluarray(int[] ar)
+    {
+
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+
+        public static double getAvg(double[] arr)
+
     static void get_max_numbers(int arr[], int len) {
         int first = 0, second = 0, third = 0;
         if (len < 3) {
@@ -60,6 +88,7 @@ public class Software {
 
     
     public static double getAvg(double[] arr)
+
 	{
 		
 	double tut = 0;
@@ -367,4 +396,80 @@ public class Software {
 	    }
 	   }
 
+public static Vector<Integer> returnPrimeNumbers(int[] intArray){
+	Vector<Integer> primeNumbers = new Vector<Integer>();
+	boolean primeBool = true;
+	for(int i=0;i<intArray.length;i++){
+		for(int j=2;j<=intArray[i]/2;j++){
+			if(intArray[i] % j == 0){
+				primeBool = false;
+				break;
+			}
+			else{
+				primeBool = true;
+			}
+			
+		}
+		if(intArray[i]==0 || intArray[i]==1){
+			primeBool = false;
+		}
+		if(primeBool){
+			System.out.println("khod boolean: " + intArray[i]);
+			primeNumbers.add(intArray[i]);
+		}
+	}
+	return primeNumbers;
 }
+		    
+    public static void main(String[] args) {
+        int[] Array = { 1, 15, 14, 13, 5, 4 , 11 };
+
+        shuffluarray(Array);
+        for (int i = 0; i < Array.length; i++)
+        {
+            System.out.print(Array[i] + " ");
+        }
+        System.out.println();
+    }
+    }
+	Scanner input=new Scanner(System.in);
+       System.out.println("Enter size: ");
+       int size= input.nextInt();
+       System.out.println("Enter Numbers: ");
+       for(int i=0; i<size; i++){
+            primeArray.add(input.nextInt());
+       }
+       	CountPrime();
+
+}
+    public static ArrayList<Integer> primeArray = new ArrayList<Integer>();
+    public static void Count-Prime(){
+        int count=0;
+        for(int i = 0; i < primeArray.size(); i++){
+            if(CheckPrime(primeArray.get(i))){
+              count++; 
+            }
+            else{
+                System.out.println((primeArray.get(i)) + " Number is Not Prime  ");
+            }
+        } 
+        System.out.println("The Number of Primes is: " + count);
+
+    }
+   public static boolean CheckPrime(int num)
+    {
+        int m=num/2;
+        if(num==0||num==1)
+        {
+            return false ;
+        }
+        else{  
+            for(int i=2;i<=m;i++){      
+             if(num%i==0){      
+              return false;      
+             } 
+            }
+        }
+      return true;
+    }
+
