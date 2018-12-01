@@ -3,8 +3,36 @@ package software;
 import java.util.Arrays;
 import java.util.*;
 import java.util.Map.Entry;
-
+import java.util.concurrent.ThreadLocalRandom;
 public class Software {
+
+    static void shuffluarray(int[] ar)
+    {
+
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+    }
+    static void shuffluarray(int[] ar)
+    {
+
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+
+        public static double getAvg(double[] arr)
 
     static void get_max_numbers(int arr[], int len) {
         int first = 0, second = 0, third = 0;
@@ -56,6 +84,7 @@ public class Software {
 
     
     public static double getAvg(double[] arr)
+
 	{
 		
 	double tut = 0;
@@ -221,8 +250,15 @@ public class Software {
     }
 
     public static void main(String[] args) {
-        // TODO code application  logic here
+        int[] Array = { 1, 15, 14, 13, 5, 4 , 11 };
 
+        shuffluarray(Array);
+        for (int i = 0; i < Array.length; i++)
+        {
+            System.out.print(Array[i] + " ");
+        }
+        System.out.println();
+    }
     }
 
 }
