@@ -5,7 +5,34 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class Software {
-    
+
+
+    	public static void isPalindrom() {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter word to check if it is palindrom: ");
+		String word = s.nextLine();
+		char[] text = word.toCharArray();
+		boolean isIt = false;
+		for (int i = 0; i <= (text.length / 2) - 1; i++) {
+			if (text[i] != text[text.length - i - 1]) {
+				isIt = false;
+				break;
+			}
+
+			else {
+
+				isIt = true;
+			}
+		}
+		if (isIt) {
+			System.out.println("True");
+
+		} else {
+			System.out.println("False");
+		}
+
+	}
+
     
     public static double getAvg(double[] arr)
 	{
