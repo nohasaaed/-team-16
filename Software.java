@@ -26,6 +26,59 @@ public class Software {
                     third = arr[i];
                 }
 
+
+
+    	public static void isPalindrom() {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter word to check if it is palindrom: ");
+		String word = s.nextLine();
+		char[] text = word.toCharArray();
+		boolean isIt = false;
+		for (int i = 0; i <= (text.length / 2) - 1; i++) {
+			if (text[i] != text[text.length - i - 1]) {
+				isIt = false;
+				break;
+			}
+
+			else {
+
+				isIt = true;
+			}
+		}
+		if (isIt) {
+			System.out.println("True");
+
+		} else {
+			System.out.println("False");
+		}
+
+	}
+
+    
+    public static double getAvg(double[] arr)
+	{
+		
+	double tut = 0;
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			tut+=arr[i];
+		}
+		
+		double avg = tut/arr.length;
+		
+		return avg;
+		
+	}
+    
+
+   
+      static void MostRepeatedElement(String inputArray[])
+      { HashMap<String, Integer> data = new HashMap<>();
+        for (String i : inputArray)
+        {
+            if (data.containsKey(i))
+            {   data.put(i, data.get(i)+1);
             }
             System.out.println("Three largest numbers are "
                     + first + " " + second + " " + third);
