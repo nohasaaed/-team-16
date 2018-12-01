@@ -5,6 +5,27 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
 public class Software {
+//<<<<<<< ReverseArray
+    
+
+	public static void ReverseArray() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("enter array size: ");
+		int size = input.nextInt();
+		String[] numbers = new String[size];
+		System.out.println("Please enter " + size + " numbers or characters: ");
+		for (int i = 0; i < size; i++) {
+			numbers[i] = input.next();
+		}
+
+		for (int i = 0; i < numbers.length / 2; i++) {
+			String temp = numbers[i];
+			numbers[i] = numbers[numbers.length - i - 1];
+			numbers[numbers.length - i - 1] = temp;
+		}
+		String[] x = numbers;
+		System.out.println(Arrays.toString(x));
+=======
 
     static void shuffluarray(int[] ar)
     {
@@ -79,6 +100,7 @@ public class Software {
 		} else {
 			System.out.println("False");
 		}
+//>>>>>>> master
 
 	}
 
