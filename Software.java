@@ -3,8 +3,9 @@ package software;
 import java.util.Arrays;
 import java.util.*;
 import java.util.Map.Entry;
-
+import java.util.concurrent.ThreadLocalRandom;
 public class Software {
+//<<<<<<< ReverseArray
     
 
 	public static void ReverseArray() {
@@ -24,11 +25,88 @@ public class Software {
 		}
 		String[] x = numbers;
 		System.out.println(Arrays.toString(x));
+=======
+
+    static void shuffluarray(int[] ar)
+    {
+
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+    }
+    static void shuffluarray(int[] ar)
+    {
+
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+
+        public static double getAvg(double[] arr)
+
+    static void get_max_numbers(int arr[], int len) {
+        int first = 0, second = 0, third = 0;
+        if (len < 3) {
+            System.out.println("Not valid input");
+        } else {
+
+            for (int i = 0; i < len; i++) {
+                if (arr[i] > first) {
+                    third = second;
+                    second = first;
+                    first = arr[i];
+
+                } else if (arr[i] > second) {
+                    third = second;
+                    second = arr[i];
+
+                } else if (arr[i] > third) {
+                    third = arr[i];
+                }
+
+
+
+    	public static void isPalindrom() {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter word to check if it is palindrom: ");
+		String word = s.nextLine();
+		char[] text = word.toCharArray();
+		boolean isIt = false;
+		for (int i = 0; i <= (text.length / 2) - 1; i++) {
+			if (text[i] != text[text.length - i - 1]) {
+				isIt = false;
+				break;
+			}
+
+			else {
+
+				isIt = true;
+			}
+		}
+		if (isIt) {
+			System.out.println("True");
+
+		} else {
+			System.out.println("False");
+		}
+//>>>>>>> master
 
 	}
 
     
     public static double getAvg(double[] arr)
+
 	{
 		
 	double tut = 0;
@@ -53,32 +131,50 @@ public class Software {
             if (data.containsKey(i))
             {   data.put(i, data.get(i)+1);
             }
-            else
-            {   data.put(i, 1);
+            System.out.println("Three largest numbers are "
+                    + first + " " + second + " " + third);
+        }
+    }
+
+    public static double getAvg(double[] arr) {
+
+        double tut = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            tut += arr[i];
+        }
+
+        double avg = tut / arr.length;
+
+        return avg;
+
+    }
+
+    static void MostRepeatedElement(String inputArray[]) {
+        HashMap<String, Integer> data = new HashMap<>();
+        for (String i : inputArray) {
+            if (data.containsKey(i)) {
+                data.put(i, data.get(i) + 1);
+            } else {
+                data.put(i, 1);
             }
         }
         String element = "";
         int freq = 1;
         Set<Entry<String, Integer>> m = data.entrySet();
-        for (Entry<String, Integer> entry : m)
-        {
-            if(entry.getValue() > freq)
-            {  element = entry.getKey();
+        for (Entry<String, Integer> entry : m) {
+            if (entry.getValue() > freq) {
+                element = entry.getKey();
                 freq = entry.getValue();
             }
         }
-        if(freq > 1)
-        {
-            System.out.println("The most frequent element : "+element);
-            System.out.println("Its frequency : "+freq);
-        }
-        else
-        {
+        if (freq > 1) {
+            System.out.println("The most frequent element : " + element);
+            System.out.println("Its frequency : " + freq);
+        } else {
             System.out.println("No frequent element. All elements are unique.");
         }
     }
-
- 
 
     public static double GetMedian(int arr[]) {
         Arrays.sort(arr);
@@ -92,7 +188,6 @@ public class Software {
 
         return median;
     }
-
 
     public static ArrayList<Integer> get_minimum(int[] array) {
         ArrayList<Integer> array2 = new ArrayList<>();
@@ -114,7 +209,6 @@ public class Software {
         return minimum_arr;
     }
 
-    
     public static void ShiftArray(String array) {
         List<Integer> num = new ArrayList<>();
         List<String> Char = new ArrayList<>();
@@ -173,11 +267,104 @@ public class Software {
                 System.out.print(Arr[i]);
             }
         }
+	
+	public static ArrayList<Integer> primeArray = new ArrayList<Integer>();
+	public static int getSmallestPrime(int arr[]){	 
+		int returnValue = -1;
+		int counter = 0;
+		int temp;
+		
+		for(int i = 0; i < arr.length; i++){	
+			for(int j = 2; j <= arr[i]/2; j++){
+					temp = arr[i] % j;
+					
+					if(temp == 0 || arr[i] == 1 || arr[i] == 0){
+						break;
+					}
+					else{
+						
+						counter++;
+						primeArray.add(arr[i]);
+					}	
+					
+			}
+			if(arr[i] == 3 || arr[i] == 2){primeArray.add(arr[i]);}
+		}
+			Collections.sort(primeArray);
+			if(counter != 0){
+				returnValue = primeArray.get(0);
+			}
+			else if(counter == 0){
+				returnValue = -1;
+			}
+		return returnValue;
+	}
+	
+	
     }
 
-    public static void main(String[] args) {
-        // TODO code application  logic here
 
+		    public static Vector<Integer> returnPrimeNumbers(int[] intArray){
+		Vector<Integer> primeNumbers = new Vector<Integer>();
+		boolean primeBool = true;
+		for(int i=0;i<intArray.length;i++){
+			for(int j=2;j<=intArray[i]/2;j++){
+				if(intArray[i] % j == 0){
+					primeBool = false;
+					break;
+				}
+				else{
+					primeBool = true;
+				}
+			}
+			if(primeBool){
+				primeNumbers.add(intArray[i]);
+			}
+		}
+		return primeNumbers;
+	}
+		    
+    public static void main(String[] args) {
+        int[] Array = { 1, 15, 14, 13, 5, 4 , 11 };
+
+        shuffluarray(Array);
+        for (int i = 0; i < Array.length; i++)
+        {
+            System.out.print(Array[i] + " ");
+        }
+        System.out.println();
+    }
     }
 
 }
+    public static ArrayList<Integer> primeArray = new ArrayList<Integer>();
+    public static void Count-Prime(){
+        int count=0;
+        for(int i = 0; i < primeArray.size(); i++){
+            if(CheckPrime(primeArray.get(i))){
+              count++; 
+            }
+            else{
+                System.out.println((primeArray.get(i)) + " Number is Not Prime  ");
+            }
+        } 
+        System.out.println("The Number of Primes is: " + count);
+
+    }
+   public static boolean CheckPrime(int num)
+    {
+        int m=num/2;
+        if(num==0||num==1)
+        {
+            return false ;
+        }
+        else{  
+            for(int i=2;i<=m;i++){      
+             if(num%i==0){      
+              return false;      
+             } 
+            }
+        }
+      return true;
+    }
+
