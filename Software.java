@@ -265,6 +265,25 @@ public class SmallestPrimeNumber {
 		return primeNumbers;
 	}
 	
+	public static void ReverseArray() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("enter array size: ");
+		int size = input.nextInt();
+		String[] numbers = new String[size];
+		System.out.println("Please enter " + size + " numbers or characters: ");
+		for (int i = 0; i < size; i++) {
+			numbers[i] = input.next();
+		}
+
+		for (int i = 0; i < numbers.length / 2; i++) {
+			String temp = numbers[i];
+			numbers[i] = numbers[numbers.length - i - 1];
+			numbers[numbers.length - i - 1] = temp;
+		}
+		String[] x = numbers;
+		System.out.println(Arrays.toString(x));
+	}
+	
 
     public static void main(String[] args) {
         int choice;
@@ -281,7 +300,8 @@ public class SmallestPrimeNumber {
 		    		"To shift an array, enter 7\n" +
 		    		"To get the least prime number in an array of numbers, enter 8\n" +
 		    		"To Shuffle an array, enter 9\n" +
-		    		"To Count the number of primes, enter 10" +
+		    		"To Count the number of primes, enter 10\n" +
+		    		"To reverse an array, enter 11..." +
 		    		"Or to exit, enter 0");
 		    
 		    choice = input.nextInt();
@@ -395,6 +415,10 @@ public class SmallestPrimeNumber {
 		    		array_1[i] = input.nextInt();
 		    	}
 		    	System.out.println(returnPrimeNumbers(array_1));
+		    	break;
+		    
+		    case 11:
+		    	ReverseArray();
 		    	break;
 		    case 0:
 		    	return;
