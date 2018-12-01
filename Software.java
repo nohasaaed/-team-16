@@ -1,11 +1,11 @@
 package software;
 
-import java.util.Arrays;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
+
 public class Software {
-//<<<<<<< ReverseArray
+
     
 
 	public static void ReverseArray() {
@@ -25,7 +25,8 @@ public class Software {
 		}
 		String[] x = numbers;
 		System.out.println(Arrays.toString(x));
-=======
+  }
+
 
     static void shuffluarray(int[] ar)
     {
@@ -74,7 +75,10 @@ public class Software {
                 } else if (arr[i] > third) {
                     third = arr[i];
                 }
-
+            }
+        }
+        System.out.println("first number: " + first +"\nSecond Number: " + second + "\nThird Number: " + "Third");
+    }
 
 
     	public static void isPalindrom() {
@@ -100,11 +104,7 @@ public class Software {
 		} else {
 			System.out.println("False");
 		}
-//>>>>>>> master
 
-	}
-
-    
     public static double getAvg(double[] arr)
 
 	{
@@ -121,36 +121,8 @@ public class Software {
 		return avg;
 		
 	}
-    
 
-   
-      static void MostRepeatedElement(String inputArray[])
-      { HashMap<String, Integer> data = new HashMap<>();
-        for (String i : inputArray)
-        {
-            if (data.containsKey(i))
-            {   data.put(i, data.get(i)+1);
-            }
-            System.out.println("Three largest numbers are "
-                    + first + " " + second + " " + third);
-        }
-    }
-
-    public static double getAvg(double[] arr) {
-
-        double tut = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-            tut += arr[i];
-        }
-
-        double avg = tut / arr.length;
-
-        return avg;
-
-    }
-
-    static void MostRepeatedElement(String inputArray[]) {
+    public static void MostRepeatedElement(String inputArray[]) {
         HashMap<String, Integer> data = new HashMap<>();
         for (String i : inputArray) {
             if (data.containsKey(i)) {
@@ -266,6 +238,7 @@ public class Software {
             for (int i = 0; i < Arr.length; i++) {
                 System.out.print(Arr[i]);
             }
+          }
         }
 	
 	public static ArrayList<Integer> primeArray = new ArrayList<Integer>();
@@ -300,8 +273,146 @@ public class Software {
 		return returnValue;
 	}
 	
-	
+	static void shuffluarray(int[] ar)
+    {
+
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i >= 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+            System.out.println(ar[i]);
+        }
     }
+	
+
+    public static void main(String[] args) {
+        int choice;
+        Scanner input = new Scanner(System.in);
+        int size;
+        
+	    while(true){
+	    	System.out.println("To get the maximun number from an array, enter 1\n" +
+		    		"To check weather a string is palindrom or not, enter 2\n" +
+		    		"To get the average value from an array, enter 3\n" +
+		    		"To know the most repeated element from an array of elements, enter 4\n" +
+		    		"To get the median from an array, enter 5\n" +
+		    		"To know the minimum value among an array of numbers, enter 6\n" +
+		    		"To shift an array, enter 7\n" +
+		    		"To get the least prime number in an array of numbers, enter 8\n" +
+		    		"To Shuffle an array, enter 9\n" +
+		    		"Or to exit, enter 0");
+		    
+		    choice = input.nextInt();
+	    
+		    switch(choice){
+		    case 1:
+		    	System.out.println("How many numbers you wish to add? ");
+		    	size = input.nextInt();
+		    	int[] arr = new int[size];
+		    	System.out.println("Fill in the numbers: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		arr[i] = input.nextInt();
+		    		 
+		    	}
+		    	get_max_numbers(arr, size);
+		    	break;
+		    	
+		    case 2:
+		    	isPalindrom();
+		    	break;
+		    	
+		    case 3:
+		    	System.out.println("How many numbers you wish to add? ");
+		    	size = input.nextInt();
+		    	double[] avArr = new double[size];
+		    	System.out.println("Fill in the numbers: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		avArr[i] = input.nextInt();
+		    		 
+		    	}
+		    	getAvg(avArr);
+		    	break;
+		    	
+		    case 4:
+		    	System.out.println("How many elements you wish to add? ");
+		    	size = input.nextInt();
+		    	String[] stringArr = new String[size];
+		    	System.out.println("Fill in the Strings: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		stringArr[i] = input.nextLine();
+		    	}
+		    	MostRepeatedElement(stringArr);
+		    	break;
+		    case 5:
+		    	System.out.println("How many numbers you wish to add? ");
+		    	size = input.nextInt();
+		    	int[] medArray = new int[size];
+		    	System.out.println("Fill in the numbers: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		medArray[i] = input.nextInt();
+		    		 
+		    	}
+		    	System.out.println("the median is: " + GetMedian(medArray));
+		    	break;
+		    	
+		    case 6:
+		    	System.out.println("How many numbers you wish to add? ");
+		    	size = input.nextInt();
+		    	int[] Array = new int[size];
+		    	System.out.println("Fill in the numbers: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		Array[i] = input.nextInt();
+		    		 
+		    	}
+		    	System.out.println("the minimum is: " + get_minimum(Array));
+		    	break;
+		    	
+		    case 7:
+		    	System.out.println("Enter a String to shift: ");
+		    	String theString;
+		    	theString = input.nextLine();
+		    	ShiftArray(theString);
+		    	break;
+		    	
+		    case 8:
+		    	System.out.println("How many numbers you wish to add? ");
+		    	size = input.nextInt();
+		    	int[] array = new int[size];
+		    	System.out.println("Fill in the numbers: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		array[i] = input.nextInt();
+		    	}
+		    	System.out.println(getSmallestPrime(array));
+		    	break;
+		    	
+		    case 9:
+		    	System.out.println("How many numbers you wish to add? ");
+		    	size = input.nextInt();
+		    	int[] ar = new int[size];
+		    	System.out.println("Fill in the numbers: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		ar[i] = input.nextInt();
+		    	}
+		    	shuffluarray(ar);
+		    	break;
+		    case 0:
+		    	return;
+		    default:
+		    	System.out.println("Invalid Input!");
+		    }
+	    }
+	   }
 
 public static Vector<Integer> returnPrimeNumbers(int[] intArray){
 	Vector<Integer> primeNumbers = new Vector<Integer>();
