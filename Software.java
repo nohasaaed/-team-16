@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class SmallestPrimeNumber {
+public class Software {
 
     static void get_max_numbers(int arr[], int len) {
         int first = 0, second = 0, third = 0;
