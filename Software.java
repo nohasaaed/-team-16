@@ -314,7 +314,7 @@ public class SmallestPrimeNumber {
 		    		avArr[i] = input.nextInt();
 		    		 
 		    	}
-		    	getAvg(avArr);
+		    	System.out.println(getAvg(avArr));
 		    	break;
 		    	
 		    case 4:
