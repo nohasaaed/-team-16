@@ -316,7 +316,7 @@ public class Software {
 
 }
     public static ArrayList<Integer> primeArray = new ArrayList<Integer>();
-    public static void CountPrime(){
+    public static void Count-Prime(){
         int count=0;
         for(int i = 0; i < primeArray.size(); i++){
             if(CheckPrime(primeArray.get(i))){
