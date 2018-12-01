@@ -249,26 +249,30 @@ public class Software {
 	
     }
 
-
-		    public static Vector<Integer> returnPrimeNumbers(int[] intArray){
-		Vector<Integer> primeNumbers = new Vector<Integer>();
-		boolean primeBool = true;
-		for(int i=0;i<intArray.length;i++){
-			for(int j=2;j<=intArray[i]/2;j++){
-				if(intArray[i] % j == 0){
-					primeBool = false;
-					break;
-				}
-				else{
-					primeBool = true;
-				}
+public static Vector<Integer> returnPrimeNumbers(int[] intArray){
+	Vector<Integer> primeNumbers = new Vector<Integer>();
+	boolean primeBool = true;
+	for(int i=0;i<intArray.length;i++){
+		for(int j=2;j<=intArray[i]/2;j++){
+			if(intArray[i] % j == 0){
+				primeBool = false;
+				break;
 			}
-			if(primeBool){
-				primeNumbers.add(intArray[i]);
+			else{
+				primeBool = true;
 			}
+			
 		}
-		return primeNumbers;
+		if(intArray[i]==0 || intArray[i]==1){
+			primeBool = false;
+		}
+		if(primeBool){
+			System.out.println("khod boolean: " + intArray[i]);
+			primeNumbers.add(intArray[i]);
+		}
 	}
+	return primeNumbers;
+}
 		    
     public static void main(String[] args) {
         int[] Array = { 1, 15, 14, 13, 5, 4 , 11 };
