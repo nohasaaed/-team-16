@@ -315,3 +315,34 @@ public class Software {
     }
 
 }
+    public static ArrayList<Integer> primeArray = new ArrayList<Integer>();
+    public static void CountPrime(){
+        int count=0;
+        for(int i = 0; i < primeArray.size(); i++){
+            if(CheckPrime(primeArray.get(i))){
+              count++; 
+            }
+            else{
+                System.out.println((primeArray.get(i)) + " Number is Not Prime  ");
+            }
+        } 
+        System.out.println("The Number of Primes is: " + count);
+
+    }
+   public static boolean CheckPrime(int num)
+    {
+        int m=num/2;
+        if(num==0||num==1)
+        {
+            return false ;
+        }
+        else{  
+            for(int i=2;i<=m;i++){      
+             if(num%i==0){      
+              return false;      
+             } 
+            }
+        }
+      return true;
+    }
+
