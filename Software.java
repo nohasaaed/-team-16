@@ -313,6 +313,14 @@ public class Software {
         System.out.println();
     }
     }
+	Scanner input=new Scanner(System.in);
+       System.out.println("Enter size: ");
+       int size= input.nextInt();
+       System.out.println("Enter Numbers: ");
+       for(int i=0; i<size; i++){
+            primeArray.add(input.nextInt());
+       }
+       	CountPrime();
 
 }
     public static ArrayList<Integer> primeArray = new ArrayList<Integer>();
