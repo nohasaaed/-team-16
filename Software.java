@@ -6,6 +6,28 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Software {
 
+    
+
+	public static void ReverseArray() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("enter array size: ");
+		int size = input.nextInt();
+		String[] numbers = new String[size];
+		System.out.println("Please enter " + size + " numbers or characters: ");
+		for (int i = 0; i < size; i++) {
+			numbers[i] = input.next();
+		}
+
+		for (int i = 0; i < numbers.length / 2; i++) {
+			String temp = numbers[i];
+			numbers[i] = numbers[numbers.length - i - 1];
+			numbers[numbers.length - i - 1] = temp;
+		}
+		String[] x = numbers;
+		System.out.println(Arrays.toString(x));
+  }
+
+
     static void shuffluarray(int[] ar)
     {
 
@@ -82,11 +104,7 @@ public class Software {
 		} else {
 			System.out.println("False");
 		}
-		
 
-	}
-
-    
     public static double getAvg(double[] arr)
 
 	{
@@ -398,8 +416,8 @@ public class Software {
 
 public static Vector<Integer> returnPrimeNumbers(int[] intArray){
 	Vector<Integer> primeNumbers = new Vector<Integer>();
-	boolean primeBool = true;
 	for(int i=0;i<intArray.length;i++){
+		boolean primeBool = true;
 		for(int j=2;j<=intArray[i]/2;j++){
 			if(intArray[i] % j == 0){
 				primeBool = false;
@@ -414,7 +432,6 @@ public static Vector<Integer> returnPrimeNumbers(int[] intArray){
 			primeBool = false;
 		}
 		if(primeBool){
-			System.out.println("khod boolean: " + intArray[i]);
 			primeNumbers.add(intArray[i]);
 		}
 	}
