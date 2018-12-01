@@ -39,10 +39,9 @@ public class Software {
                     + first + " " + second + " " + third);
         }
     }
-
+	
     public static void main(String[] args) {
-        // TODO code application logic here
-
+        // TODO code application  logic here
     }
     
 
