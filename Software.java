@@ -5,6 +5,34 @@ import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Software {
+	
+	public static void Sort()
+        
+    {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter number of elements");
+        int size=input.nextInt();
+        int myArray[]=new int[size];
+        System.out.println("Enter elements");
+        for(int i=0;i<size;i++)
+        {
+            myArray[i]=input.nextInt();
+        }
+        for (int i=1,j;i<size;i++) 
+        {
+            int tmp=myArray[i];
+            for (j=i;j>0&&tmp<myArray[j-1];j--)
+            {
+                myArray[j]=myArray[j-1];
+            }
+            myArray[j]=tmp;
+            System.out.println(myArray[i]);
+        }
+        for (int i=0;i<size;i++)
+        {
+            System.out.println(myArray[i]);
+        }
+    }
 
     static void get_max_numbers(int arr[], int len) {
         int first = 0, second = 0, third = 0;
