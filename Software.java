@@ -6,6 +6,19 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Software {
 	
+	static void DistinctArr(int [] arr, int len)
+    {
+        for (int i = 0; i < len; i++)
+        {   
+	    int j;
+            for (j = 0; j < i; j++)
+                if (arr[i] == arr[j])
+                    break;
+            if (i == j)
+                System.out.print( arr[i] + " ");
+        }
+      }
+		
 	public static void Sort()
         
     {
@@ -449,9 +462,23 @@ public class Software {
 		    	ReverseArray();
 		    	break;
 
-			    case 12:
-				    sort();
-				    break;
+		    case 12:
+	                sort()
+			break;
+				    
+		     case 13:
+			System.out.println("How many numbers you wish to add? ");
+		    	size = input.nextInt();
+		    	int[] arrdist = new int[size];
+		    	System.out.println("Fill in the numbers: ");
+		    	
+		    	for(int i = 0; i < size; i++){
+		    		arrdist[i] = input.nextInt();
+		    		 
+		    	}
+		    	DistinctArr(arrdist, size);
+		    	break;    
+				    
 		    case 0:
 		    	return;
 		    default:
