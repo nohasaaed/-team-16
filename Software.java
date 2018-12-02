@@ -448,6 +448,10 @@ public class Software {
 		    case 11:
 		    	ReverseArray();
 		    	break;
+
+			    case 12:
+				    sort();
+				    break;
 		    case 0:
 		    	return;
 		    default:
